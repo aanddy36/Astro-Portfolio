@@ -1,0 +1,51 @@
+---
+import Footer from "../components/Footer.astro";
+import { Navbar } from "../components/Navbar";
+import "@fontsource-variable/inter";
+/* interface Props {
+  title: string;
+}
+
+const { title } = Astro.props; */
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content={`I'm a Frontend Web Developer building the Front-end of Websites and Web 
+	  Applications that leads to the success of the overall product. Check out some of my 
+	  work in the Projects section.`}
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Andrés Del Chiaro | React Developer</title>
+    <meta charset="UTF-8" />
+
+    <meta property="og:title" content={`Andrés Del Chiaro | React Developer`} />
+    <meta
+      property="og:description"
+      content={`I'm a Frontend Web Developer building the Front-end
+	 of Websites and Web Applications that leads to the success of the overall product. Check out
+	  some of my work in the Projects section.`}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.request.url} />
+    <meta property="og:image" content="/logo.png" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-mainBg text-white">
+    <Navbar client:idle />
+    <div class="grow">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
+<style>
+  body {
+    font-family: "Inter Variable", sans-serif;
+  }
+</style>
