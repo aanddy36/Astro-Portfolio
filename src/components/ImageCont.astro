@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  image: ImageMetadata;
+  title: string;
+  githubRepo: string;
+}
+
+const { image, title, githubRepo } = Astro.props;
+---
+
+<div class="relative cursor-pointer overflow-hidden rounded-md">
+  <div
+    class="absolute z-10 inset-0 transition duration-300 bg-black/60 opacity-0 rounded-md
+    grid place-content-center hover:opacity-100 hover:backdrop-blur-sm gap-1 tablet:gap-6"
+  >
+    <div class="flex gap-3 tablet:gap-10 bg-transparent">
+      <a
+        href={githubRepo}
+        target="_blank"
+        class="px-5 py-1 laptop:text-base tablet:text-base tablet:py-2 text-[14px] font-semibold 
+            rounded-full transition duration-200 text-mainBg
+            bg-lightBlue hover:bg-hoverBtn"
+      >
+        Repository
+        <!-- <FaGithub className="scale-[2]" /> -->
+      </a>
+    </div>
+  </div>
+  <Image
+    src={image}
+    alt={`${title} image`}
+    class="relative rounded-md object-contain"
+  />
+</div>

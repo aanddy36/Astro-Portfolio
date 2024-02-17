@@ -21,7 +21,7 @@ export const Navbar = () => {
   return (
     <div
       className={`rounded-lg transition-all duration-200 w-[95%] left-[50%]
-     -translate-x-[50%] backdrop-blur-md z-[1] flex flex-col overflow-hidden
+     -translate-x-[50%] backdrop-blur-md z-[2] flex flex-col overflow-hidden
       bg-navbar/50 ${
         isSticky
           ? "fixed rounded-t-0 shadow-md"
