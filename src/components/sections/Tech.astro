@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets";
-
-import netlify from "../../assets/logos/netlify.svg";
-import js from "../../assets/logos/js.svg";
 import { getCollection } from "astro:content";
 
 interface ILogo {
@@ -18,14 +15,14 @@ interface ILogo {
 }
 
 const logos = await getCollection("logos");
-console.log(logos);
 ---
 
-<div class="flex items-center gap-14 flex-wrap">
+<div class="flex items-start gap-14 flex-wrap">
   {
     logos.map((logo: ILogo) => {
       return (
-        <div class="flex flex-col items-center min-h-[100px] laptop:min-h-[130px] gap-1 laptop:gap-3">
+        <div class="flex flex-col items-center min-h-[100px] laptop:min-h-[130px] gap-1 
+        laptop:gap-3">
           <Image
             src={logo.data.logo}
             alt={`${logo.data.name} logo`}

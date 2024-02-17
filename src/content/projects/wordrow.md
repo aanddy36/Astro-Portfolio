@@ -1,7 +1,14 @@
 ---
 title: "Wordrow"
 description: "An English dictionary which displays meanings, examples, syllables, antonyms and synonyms of the English word you like. Created using the WordsAPI from RapidAPI."
-cover: "./wordrow-main.jpg"
+cover: "../../assets/projects/wordrow-main.jpg"
 githubRepo: "https://github.com/aanddy36/English-Dictionary"
 url: "https://wordrow.netlify.app/"
+order: 5
+techsUsed:
+  - react
+  - ts
+  - js
+  - tailwind
+  - html
 ---

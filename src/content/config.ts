@@ -1,4 +1,4 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, reference } from "astro:content";
 
 const projectSchema = defineCollection({
   type: "content", // v2.5.0 and later
@@ -9,6 +9,8 @@ const projectSchema = defineCollection({
       cover: image(),
       githubRepo: z.string(),
       url: z.string(),
+      order: z.number(),
+      techsUsed: z.array(reference("logos")),
     }),
 });
 
@@ -19,6 +21,7 @@ const logoSchema = defineCollection({
       name: z.string(),
       logo: image(),
       clas: z.string(),
+      position: z.number(),
     }),
 });
 

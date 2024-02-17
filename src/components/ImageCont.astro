@@ -1,32 +1,54 @@
 ---
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
+import { FaGithub } from "react-icons/fa";
+import { getCollection } from "astro:content";
 
 interface Props {
   image: ImageMetadata;
   title: string;
   githubRepo: string;
+  techs: any[];
 }
+const { image, title, githubRepo, techs } = Astro.props;
 
-const { image, title, githubRepo } = Astro.props;
+const logos = await getCollection("logos", ({ slug }) => {
+  return techs.some((tech) => tech.slug === slug);
+});
 ---
 
-<div class="relative cursor-pointer overflow-hidden rounded-md">
+<div class="relative overflow-hidden rounded-md">
   <div
     class="absolute z-10 inset-0 transition duration-300 bg-black/60 opacity-0 rounded-md
-    grid place-content-center hover:opacity-100 hover:backdrop-blur-sm gap-1 tablet:gap-6"
+    flex flex-col items-center hover:opacity-100 hover:backdrop-blur-sm gap-1 tablet:gap-6
+     justify-center"
   >
-    <div class="flex gap-3 tablet:gap-10 bg-transparent">
-      <a
-        href={githubRepo}
-        target="_blank"
-        class="px-5 py-1 laptop:text-base tablet:text-base tablet:py-2 text-[14px] font-semibold 
-            rounded-full transition duration-200 text-mainBg
+    <a
+      href={githubRepo}
+      target="_blank"
+      class="px-5 py-1 laptop:text-base tablet:text-base tablet:py-2 text-[14px] font-semibold
+            rounded-full transition duration-200 text-mainBg flex items-center gap-6 w-fit
             bg-lightBlue hover:bg-hoverBtn"
-      >
-        Repository
-        <!-- <FaGithub className="scale-[2]" /> -->
-      </a>
+    >
+      Repository
+      <FaGithub className="scale-[1.5]" />
+    </a>
+
+    <div
+      class="pt-2 laptop:pt-4 px-2 flex justify-center items-center gap-y-[2px] gap-x-2
+      tablet:gap-x-4 laptop:gap-6 full:gap-x-8 text-white flex-wrap"
+    >
+      {
+        logos
+          .sort((a, b) => a.data.position - b.data.position)
+          .map((logo) => (
+            <Image
+              src={logo.data.logo}
+              alt={`${logo.data.name} logo`}
+              class="max-w-[30px] tablet:max-w-10 laptop:max-w-14"
+            />
+          ))
+      }
     </div>
   </div>
   <Image
