@@ -1,12 +1,32 @@
-import { useState } from "react";
-import toggleBars from "../assets/toggle-bars.png";
+import { useEffect, useState } from "react";
+import toggleBars from "../../assets/toggle-bars.png";
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 32) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
-      className="rounded-lg absolute top-8 transition-all duration-200 w-[95%] left-[50%]
+      className={`rounded-lg transition-all duration-200 w-[95%] left-[50%]
      -translate-x-[50%] backdrop-blur-md z-[1] flex flex-col overflow-hidden
-      bg-navbar/50"
+      bg-navbar/50 ${
+        isSticky
+          ? "fixed rounded-t-0 shadow-md"
+          : "absolute top-8 rounded-t-lg shadow-none "
+      }`}
     >
       <nav className=" flex justify-between items-center pl-4 pr-6 py-3 w-full">
         <a
@@ -17,7 +37,7 @@ export const Navbar = () => {
           [<span className="font-extrabold text-4xl line">a</span>]
         </a>
         <ul
-          className="hidden min-[600px]:flex text-[#fff]/70 gap-5 laptop:gap-8 transition
+          className="hidden laptop:flex text-[#fff]/70 gap-5 laptop:gap-8 transition
         duration-200 text-base laptop:text-lg"
         >
           <li className=" cursor-pointer hover:text-white">
@@ -36,13 +56,13 @@ export const Navbar = () => {
         <a
           href="#contact"
           className="px-4 py-1 font-medium rounded-full bg-transparent border transition 
-        duration-200 border-white hover:bg-white hidden min-[600px]:block
+        duration-200 border-white hover:bg-white hidden laptop:block
          hover:text-mainBg text-base laptop:text-lg"
         >
           <span className="text-sm tablet:text-base">Contact</span>
         </a>
         <button
-          className="min-[600px]:hidden"
+          className="laptop:hidden"
           onClick={() => setIsNavOpen((prev) => !prev)}
         >
           <img
@@ -57,7 +77,7 @@ export const Navbar = () => {
         className={`w-full flex flex-col text-right transition-all duration-300
         `}
         onClick={() => setIsNavOpen(false)}
-        style={{height: isNavOpen ? '245px' : '0px'}}
+        style={{ height: isNavOpen ? "245px" : "0px" }}
       >
         <a
           href="#education"
