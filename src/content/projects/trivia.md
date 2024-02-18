@@ -5,6 +5,7 @@ cover: "../../assets/projects/trivia-main.jpg"
 githubRepo: "https://github.com/aanddy36/Trivia-Quiz"
 url: "https://the-trivia-quiz.netlify.app/"
 order: 2
+isWork: false
 techsUsed:
   - react
   - js

@@ -5,6 +5,7 @@ cover: "../../assets/projects/wordrow-main.jpg"
 githubRepo: "https://github.com/aanddy36/English-Dictionary"
 url: "https://wordrow.netlify.app/"
 order: 5
+isWork: false
 techsUsed:
   - react
   - ts

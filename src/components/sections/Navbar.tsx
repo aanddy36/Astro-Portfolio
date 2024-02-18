@@ -41,7 +41,7 @@ export const Navbar = () => {
         duration-200 text-base laptop:text-lg"
         >
           <li className=" cursor-pointer hover:text-white">
-            <a href="#education">Experience</a>
+            <a href="#experience">Experience</a>
           </li>
           <li className=" cursor-pointer hover:text-white">
             <a href="#projects">Projects</a>
@@ -80,7 +80,7 @@ export const Navbar = () => {
         style={{ height: isNavOpen ? "245px" : "0px" }}
       >
         <a
-          href="#education"
+          href="#experience"
           className="px-6 text-white/70 hover:text-white/100 cursor-pointer hover:px-9
              w-full border-t border-[#fff]/30 py-3 transition-all duration-200"
         >

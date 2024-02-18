@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 interface Props {
   image: ImageMetadata;
   title: string;
-  githubRepo: string;
+  githubRepo?: string;
   techs: any[];
 }
 const { image, title, githubRepo, techs } = Astro.props;
@@ -23,16 +23,20 @@ const logos = await getCollection("logos", ({ slug }) => {
     flex flex-col items-center hover:opacity-100 hover:backdrop-blur-sm gap-1 tablet:gap-6
      justify-center"
   >
-    <a
-      href={githubRepo}
-      target="_blank"
-      class="px-5 py-1 laptop:text-base tablet:text-base tablet:py-2 text-[14px] font-semibold
+    {
+      githubRepo && (
+        <a
+          href={githubRepo}
+          target="_blank"
+          class="px-5 py-1 laptop:text-base tablet:text-base tablet:py-2 text-[14px] font-semibold
             rounded-full transition duration-200 text-mainBg flex items-center gap-6 w-fit
             bg-lightBlue hover:bg-hoverBtn"
-    >
-      Repository
-      <FaGithub className="scale-[1.5]" />
-    </a>
+        >
+          Repository
+          <FaGithub className="scale-[1.5]" />
+        </a>
+      )
+    }
 
     <div
       class="pt-2 laptop:pt-4 px-2 flex justify-center items-center gap-y-[2px] gap-x-2

@@ -2,5 +2,5 @@
 name: "Tailwind"
 logo: "../../assets/logos/tailwind.svg"
 clas: "tailwind"
-position: 11
+position: 12
 ---

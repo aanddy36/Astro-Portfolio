@@ -5,6 +5,7 @@ cover: "../../assets/projects/spania-main.jpg"
 githubRepo: "https://github.com/aanddy36/SpanIA"
 url: "https://spania.vercel.app/"
 order: 1
+isWork: false
 techsUsed:
   - react
   - ts

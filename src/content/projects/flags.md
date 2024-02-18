@@ -5,6 +5,7 @@ cover: "../../assets/projects/flags-main.jpg"
 githubRepo: "https://github.com/aanddy36/Flags-game"
 url: "https://flags-game-quiz.netlify.app/"
 order: 3
+isWork: false
 techsUsed:
   - react
   - js

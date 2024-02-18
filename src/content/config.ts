@@ -7,9 +7,10 @@ const projectSchema = defineCollection({
       title: z.string(),
       description: z.string(),
       cover: image(),
-      githubRepo: z.string(),
+      githubRepo: z.string().optional(),
       url: z.string(),
       order: z.number(),
+      isWork: z.boolean(),
       techsUsed: z.array(reference("logos")),
     }),
 });

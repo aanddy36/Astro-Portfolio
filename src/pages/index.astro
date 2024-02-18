@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import { Hero } from "../components/sections/Hero";
 import Projects from "../components/sections/Projects.astro";
+import Experience from "../components/sections/Experience.astro";
 import "../index.css";
 import Tech from "../components/sections/Tech.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Hero client:load />
+  <Experience />
   <Projects />
   <Tech />
 </Layout>

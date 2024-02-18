@@ -5,6 +5,7 @@ cover: "../../assets/projects/astroxplorer-main.jpg"
 githubRepo: "https://github.com/aanddy36/AstroXplorer"
 url: "https://astroxplorer.netlify.app/"
 order: 4
+isWork: false
 techsUsed:
   - react
   - ts
