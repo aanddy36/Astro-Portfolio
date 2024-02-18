@@ -47,7 +47,7 @@ export const Navbar = () => {
             <a href="#projects">Projects</a>
           </li>
           <li className=" cursor-pointer hover:text-white">
-            <a href="#techs">Skills & Certifications</a>
+            <a href="#skills">Skills & Certifications</a>
           </li>
           <li className=" cursor-pointer hover:text-white">
             <a href="#about">About</a>
@@ -94,7 +94,7 @@ export const Navbar = () => {
           Projects
         </a>
         <a
-          href="#techs"
+          href="#skills"
           className="px-6 text-white/70 hover:text-white/100 cursor-pointer hover:px-9
              w-full border-t border-[#fff]/30 py-3 transition-all duration-200"
         >

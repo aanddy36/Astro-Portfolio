@@ -17,4 +17,11 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  @keyframes scroll {
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(var(--direction));}
+  }
+  .move{
+    animation: scroll 30s linear 0s infinite normal;
+  }
   

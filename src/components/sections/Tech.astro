@@ -1,38 +1,40 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import SingleTech from "../SingleTech.astro";
+import { MovingRow } from "../MovingRow.tsx";
+import "../../index.css";
 
-interface ILogo {
-  id: string;
-  slug: string;
-  body: string;
-  collection: string;
-  data: {
-    name: string;
-    logo: ImageMetadata;
-    clas: string;
-  };
-}
-
-const logos = await getCollection("logos");
+const logos = await getCollection("logos", ({ data }) => {
+  return data.isUsed;
+});
 ---
 
-<div class="flex items-start gap-14 flex-wrap">
-  {
-    logos.map((logo: ILogo) => {
-      return (
-        <div class="flex flex-col items-center min-h-[100px] laptop:min-h-[130px] gap-1 
-        laptop:gap-3">
-          <Image
-            src={logo.data.logo}
-            alt={`${logo.data.name} logo`}
-            class={`max-w-[50px]`}
-          />
-          <span class="text-xs tablet:text-sm laptop:text-base text-center font-light tracking-wider text-[#ffffff96]">
-            {logo.data.name}
-          </span>
-        </div>
-      );
-    })
-  }
-</div>
+<main
+  id="skills"
+  class="mt-28 relative bg-[#100216] text-white mb-20 border-[#ffffff1c]
+    flex flex-col items-center w-[80%] mx-auto rounded-2xl gap-4 py-10 overflow-hidden
+    bg-gradient-to-b from-[#ffffff10] to-[#ffffff00]"
+>
+  <h3 class="text-[#fff] text-3xl laptop:text-5xl tablet:text-4xl font-bold text-center">
+    Skills & Certifications
+  </h3>
+  <h5 class="text-[#ffffff96]">The dev tools and apps I use</h5>
+  <section class="pt-10 relative">
+    <div class="flex relative" style={{ left: "25%" }}>
+      <MovingRow direction="left" client:visible>
+        {logos.slice(0, 9).map((logo) => <SingleTech logo={logo} />)}
+      </MovingRow>
+      <MovingRow direction="left" client:visible>
+        {logos.slice(0, 9).map((logo) => <SingleTech logo={logo} />)}
+      </MovingRow>
+    </div>
+    <div class="flex relative" style={{ right: "25%" }}>
+      <MovingRow direction="right" client:load>
+        {logos.slice(9).map((logo) => <SingleTech logo={logo} />)}
+      </MovingRow>
+      <MovingRow direction="right" client:load>
+        {logos.slice(9).map((logo) => <SingleTech logo={logo} />)}
+      </MovingRow>
+    </div>
+  </section>
+</main>

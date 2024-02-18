@@ -14,7 +14,11 @@ const projects = await getCollection("projects", ({ data }) => {
   class="relative z-[1] flex flex-col items-center gap-12 mx-auto w-full pb-12 pt-[150px]
     px-8"
 >
-  <h1 class="text-[#fff] text-5xl font-bold">Projects</h1>
+  <h3
+    class="text-[#fff] text-3xl laptop:text-5xl tablet:text-4xl font-bold text-center"
+  >
+    Projects
+  </h3>
   <div class="columns-1 gap-8 w-full full:columns-2">
     {
       projects
@@ -29,9 +33,9 @@ const projects = await getCollection("projects", ({ data }) => {
             />
             <div class="relative h-full flex flex-col flex-1 gap-5 laptop:gap-3">
               <div class="relative flex justify-between items-start ">
-                <h1 class="text-[#fff] text-lg font-bold tracking-wide">
+                <h4 class="text-[#fff] text-lg font-bold tracking-wide">
                   {project.data.title}
-                </h1>
+                </h4>
                 <a href={project.data.url} target="_blank">
                   <button
                     class="flex items-center px-4 py-1 font-medium text-md rounded-full 

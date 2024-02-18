@@ -22,6 +22,7 @@ const logoSchema = defineCollection({
       name: z.string(),
       logo: image(),
       clas: z.string(),
+      isUsed: z.boolean(),
       position: z.number(),
     }),
 });
