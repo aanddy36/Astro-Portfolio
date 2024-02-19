@@ -3,8 +3,17 @@ import toggleBars from "../../assets/toggle-bars.png";
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
+      const howMuchScrolled =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      setScrollProgress((howMuchScrolled / height) * 100);
       if (window.scrollY > 32) {
         setIsSticky(true);
       } else {
@@ -28,7 +37,10 @@ export const Navbar = () => {
           : "absolute top-8 rounded-t-lg shadow-none "
       }`}
     >
-      <nav className=" flex justify-between items-center pl-4 pr-6 py-3 w-full">
+      <nav
+        className=" flex justify-between items-center pl-4 pr-6 py-3 w-full rounded-lg
+       relative"
+      >
         <a
           onClick={() => setIsNavOpen(false)}
           href="#hero"
@@ -72,7 +84,10 @@ export const Navbar = () => {
           />
         </button>
       </nav>
-
+      <div
+        className={`h-[2px] bg-gradient-to-l  from-white/100 to-white/20`}
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
       <ul
         className={`w-full flex flex-col text-right transition-all duration-300
         `}
