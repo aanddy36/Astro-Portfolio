@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import {
+  HiAcademicCap,
+  HiOutlineCalendar,
+  HiOutlineClock,
+} from "react-icons/hi";
+
+const certs = await getCollection("certifications");
+---
+
+<div class="gap-8 flex flex-col items-center mx-auto pb-10 tablet:pb-28 text-white">
+  {
+    certs
+      .sort((a, b) => b.data.order - a.data.order)
+      .map((cert) => {
+        return (
+          <article class="w-[70%] mt-10 flex flex-col gap-2">
+            <div class="flex justify-between items-center flex-col gap-4 laptop:flex-row laptop:gap-0">
+              <h2 class="text-lg tracking-wide font-bold text-center laptop:text-left">
+                {cert.data.title}
+              </h2>
+              <a
+                href={cert.data.url}
+                target="_blank"
+                class=" bg-lightBlue text-mainBg rounded-xl font-semibold
+              tracking-wide px-5 py-1 transition text-sm duration-200
+              hover:bg-hoverBtn cursor-pointer"
+              >
+                {" "}
+                See Certificate
+              </a>
+            </div>
+            <div
+              class="tracking-wide font-extralight text-sm flex justify-between text-[#ffffffce]
+      flex-col laptop:flex-row mt-2 laptop:mt-0"
+            >
+              <div class="flex items-center w-full laptop:w-[50%] full:w-[40%] justify-between">
+                <div class="flex  items-center gap-2">
+                  <HiAcademicCap /> {cert.data.place}
+                </div>
+                <div class="flex  items-center gap-2">
+                  <HiOutlineClock /> {cert.data.hours} total hours
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mx-auto laptop:mx-0 mt-3 laptop:mt-0">
+                <HiOutlineCalendar /> Obtained on {cert.data.date}
+              </div>
+            </div>
+            <div class="w-full border-white border-t mt-5" />
+          </article>
+        );
+      })
+  }
+</div>

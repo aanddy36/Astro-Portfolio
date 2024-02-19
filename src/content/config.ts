@@ -27,7 +27,31 @@ const logoSchema = defineCollection({
     }),
 });
 
+const certificationsSchema = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    place: z.string(),
+    hours: z.number(),
+    url: z.string(),
+    date: z.string(),
+    order: z.number(),
+  }),
+});
+
+const aboutSchema = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      sentence: z.string(),
+      icon: image(),
+      order:z.number()
+    }),
+});
+
 export const collections = {
   projects: projectSchema,
   logos: logoSchema,
+  certifications: certificationsSchema,
+  about: aboutSchema,
 };
