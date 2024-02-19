@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { DownloadButton } from "../DownloadButton";
 import { PersonalCard } from "../PersonalCard";
 
@@ -47,6 +47,35 @@ export const Hero = () => {
 
           <DownloadButton />
         </div>
+      </div>
+      <div
+        className=" hidden laptop:flex flex-col gap-12 absolute top-[50%] translate-y-[-50%]
+       backdrop-blur-md py-8 px-6 bg-navbar/50 rounded-r-lg"
+      >
+        <a
+          href="https://www.linkedin.com/in/delchiaroa/"
+          target="_blank"
+          className="cursor-pointer scale-[2.1] text-white/50 hover:text-white/100
+        transition-all duration-200"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/aanddy36"
+          target="_blank"
+          className="cursor-pointer scale-[2.1] text-white/50 hover:text-white/100
+        transition-all duration-200"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="mailto:anchibro@hotmail.com?subject=Let's work together!"
+          target="_blank"
+          className="cursor-pointer scale-[2.1] text-white/50 hover:text-white/100
+        transition-all duration-200"
+        >
+          <FaEnvelope />
+        </a>
       </div>
     </div>
   );

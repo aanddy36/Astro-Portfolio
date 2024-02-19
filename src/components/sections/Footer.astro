@@ -1,3 +1,8 @@
+---
+import { FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa6";
+---
+
 <div
   class="relative z-10 text-white border-t border-t-white/20 flex flex-col
       items-center gap-20 py-10"
@@ -11,21 +16,32 @@
     </div>
     <div class="flex flex-col gap-5">
       <span class="font-extrabold tracking-wider text-xl">Social</span>
-      <ul class="flex flex-col gap-4">
-        <li class="opacity-50 transition duration-200 hover:opacity-100">
-          <a
-            href="https://www.linkedin.com/in/delchiaroa/"
-            target="_blank"
-            class="cursor-pointer">Linkedin</a
-          >
-        </li>
-        <li class="opacity-50 transition duration-200 hover:opacity-100">
-          <a
-            href="https://github.com/aanddy36"
-            target="_blank"
-            class="cursor-pointer">GitHub</a
-          >
-        </li>
+      <ul class="flex flex-col gap-8 pl-2">
+        <a
+          href="https://www.linkedin.com/in/delchiaroa/"
+          target="_blank"
+          class="cursor-pointer scale-[1.6] transition-all duration-200 w-fit text-white/60
+           hover:text-white/100"
+        >
+          <FaLinkedin />
+        </a>
+
+        <a
+          href="https://github.com/aanddy36"
+          target="_blank"
+          class="cursor-pointer scale-[1.6] transition-all duration-200 w-fit text-white/60
+           hover:text-white/100"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="mailto:anchibro@hotmail.com?subject=Let's work together!"
+          target="_blank"
+          class="cursor-pointer scale-[1.6] transition-all duration-200 w-fit text-white/60
+         hover:text-white/100"
+        >
+          <FaEnvelope />
+        </a>
       </ul>
     </div>
   </div>
