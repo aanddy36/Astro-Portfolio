@@ -1,5 +1,4 @@
 import pp from "../assets/cv-bg.png";
-import reactLogo from "../assets/react.svg";
 import { FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import { ReactLogo } from "../assets/reactIcons/ReactLogo";
 
