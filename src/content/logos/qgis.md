@@ -2,6 +2,6 @@
 name: "QGIS"
 logo: "../../assets/logos/qgis.svg"
 clas: "qgis"
-isUsed: true
+isUsed: false
 position: 18
 ---

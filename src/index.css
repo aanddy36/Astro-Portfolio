@@ -1,27 +1,37 @@
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #300b40;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #553363;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #84688f;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #300b40;
+  100% {
+    transform: translateX(var(--direction));
   }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #553363;
-    border-radius: 12px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  @keyframes scroll {
-    0%{transform: translateX(0%);}
-    100%{transform: translateX(var(--direction));}
-  }
-  .move{
-    animation: scroll 30s linear 0s infinite normal;
-  }
-  
+}
+.move {
+  animation: scroll 30s linear 0s infinite normal;
+}
+.radial-effect {
+  /* Change 70% to control the opacity gradient range */
+  background: radial-gradient(closest-side,rgba(16, 2, 22, 0.8), rgba(16, 2, 22, 1));
+  /* background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c); */
+  /* Ensure the same values as background gradient */
+  /* background-color: #100216; /* Set the desired color */
+}

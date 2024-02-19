@@ -19,11 +19,14 @@ export default {
       fontFamily: {
         github: ["Courier New", "Courier", "monospace"],
       },
-      transitionProperty:{
-        'dimensions': 'width, height, scale'
+      transitionProperty: {
+        dimensions: "width, height, scale",
       },
-      boxShadow:{
-        pp: "0 0 100px rgba(89, 216, 255, 0.541)"
+      boxShadow: {
+        pp: "0 0 100px rgba(89, 216, 255, 0.541)",
+      },
+      backgroundSize: {
+        custom: "25em",
       },
     },
   },

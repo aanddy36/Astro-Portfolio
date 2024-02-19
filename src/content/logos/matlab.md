@@ -2,6 +2,6 @@
 name: "MatLab"
 logo: "../../assets/logos/matlab.svg"
 clas: "matlab"
-isUsed: true
+isUsed: false
 position: 17
 ---

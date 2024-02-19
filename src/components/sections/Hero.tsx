@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { DownloadButton } from "../DownloadButton";
 import { PersonalCard } from "../PersonalCard";
+import "../../index.css"
 
 export const Hero = () => {
   const [{ rotationX, rotationY }, setRotation] = useState({
@@ -26,9 +27,11 @@ export const Hero = () => {
   return (
     <div
       id="hero"
-      className="grid relative h-[820px] tablet:h-[880px] laptop:h-screen"
+      className="grid relative h-[820px] tablet:h-[880px] laptop:h-screen
+      bg-[url('/background.png')] bg-custom bg-repeat"
       ref={cardCont}
     >
+      <div className="absolute inset-0 bg-mainBg radial-effect"></div>
       <div
         className="mx-0 mb-8 mt-20 flex flex-col items-center h-full justify-center gap-8
          laptop:gap-[60px] laptop:m-0 laptop:mt-14"
