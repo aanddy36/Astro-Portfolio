@@ -4,7 +4,7 @@ description: "An English dictionary which displays meanings, examples, syllables
 cover: "../../assets/projects/wordrow-main.jpg"
 githubRepo: "https://github.com/aanddy36/English-Dictionary"
 url: "https://wordrow.netlify.app/"
-order: 5
+order: 3
 isWork: false
 techsUsed:
   - react

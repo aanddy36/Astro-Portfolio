@@ -4,7 +4,7 @@ description: "15 general knowledge questions of easy, medium or hard difficulty 
 cover: "../../assets/projects/trivia-main.jpg"
 githubRepo: "https://github.com/aanddy36/Trivia-Quiz"
 url: "https://the-trivia-quiz.netlify.app/"
-order: 2
+order: 5
 isWork: false
 techsUsed:
   - react

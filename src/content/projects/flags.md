@@ -4,7 +4,7 @@ description: "In this game you can pick a continent (or the entire world) and gu
 cover: "../../assets/projects/flags-main.jpg"
 githubRepo: "https://github.com/aanddy36/Flags-game"
 url: "https://flags-game-quiz.netlify.app/"
-order: 3
+order: 6
 isWork: false
 techsUsed:
   - react
